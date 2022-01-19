@@ -1286,6 +1286,8 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
 
         if (chars == null) {
             if (length <= 1024 * 64) {
+                // 一个字符 == 2个字节
+                // 1024 * 64 = 65536长度 = 128KB
                 chars = new char[1024 * 64];
                 charsLocal.set(chars);
             } else {
